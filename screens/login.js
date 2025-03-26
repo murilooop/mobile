@@ -1,8 +1,9 @@
 import {Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
 import background4 from '../images/white background.jpg'
 import { ImageBackground } from 'react-native-web';
+import Casa from './Home'
 
-export default function Home(){
+export default function Login({navigation}){
     return(
         <ImageBackground style = {{flex: 1, width: '100%', height: '100%'}} source = {background4}>
             <View style = {styles.loginpage}>
@@ -12,7 +13,7 @@ export default function Home(){
                     <TextInput style = {styles.input} placeholder='Login'/>
                     <TextInput style = {styles.input} placeholder='Password'/>
                 </View>
-                <Button title ="Entrar"/>
+                <Button title ="Entrar" onPress={() => navigation.navigate('Home')}/>
                 <View style = {styles.credits}>
                     <Text style={styles.textcredits}>Clique aqui para Suporte</Text>
                 </View>

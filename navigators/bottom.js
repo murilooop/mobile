@@ -14,12 +14,10 @@ export default function Botttom() {
       <Bottom.Navigator
       initialRouteName='Login'
       screenOptions={{
-        tabBarActiveTintColor:'black',
-        tabBarActiveBackgroundColor:'#fff',
-        tabBarInactiveBackgroundColor:'#000'  ,
-        tabBarInactiveTintColor:'white',
-        headerStyle:{backgroundColor:'#fff'},
-        headerTintColor:'black'
+        tabBarActiveTintColor:'#FF0000',
+        tabBarActiveBackgroundColor:'#997722',
+        tabBarInactiveBackgroundColor:'#220000'  ,
+        tabBarInactiveTintColor:'#000',
       }}  
       >
         <Bottom.Screen name='Login' component={Login}/>
