@@ -11,7 +11,7 @@ export default function Home(){
     return(
         <ImageBackground style = {{flex: 1, width: '100%', height: '100%'}} source = {background4}>
             <View style = {styles.home}>
-                <Text style = {styles.title}>Celulare</Text>
+                <Text style = {styles.title}>Celular</Text>
                 <View style = {styles.samsung}>
                     <Text style = {styles.text1}>Samsung</Text>
                     <Text style = {styles.text2} >O Samsung Galaxy oferece excelente desempenho, design elegante e câmeras de alta qualidade.</Text>
