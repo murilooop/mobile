@@ -1,7 +1,7 @@
 import {Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
 import background4 from '../images/white background.jpg'
 import { ImageBackground } from 'react-native-web';
-import Casa from './Home'
+
 
 export default function Login({navigation}){
     return(
