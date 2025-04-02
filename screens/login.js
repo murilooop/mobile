@@ -13,7 +13,7 @@ export default function Login({navigation}){
                     <TextInput style = {styles.input} placeholder='Login'/>
                     <TextInput style = {styles.input} placeholder='Password'/>
                 </View>
-                <Button title ="Entrar" onPress={() => navigation.navigate('Home')}/>
+                <Button title ="Entrar" onPress={() => navigation.navigate('HomeTab')}/>
                 <View style = {styles.credits}>
                     <Text style={styles.textcredits}>Clique aqui para Suporte</Text>
                 </View>
