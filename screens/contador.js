@@ -1,9 +1,13 @@
-import{View,Text,Button,Image, ScrollView} from 'react-native';
+import{View,Text,Button,Image, ScrollView, TextInput, TouchableOpacity} from 'react-native';
 import { StyleSheet } from 'react-native';
 import { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
+
+
 export default function Contador(){
+
     const [contador, setContador] = useState(0)
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
 
     function Aumentar(){
         setContador(contador+1)
@@ -36,6 +40,25 @@ export default function Contador(){
                     <Text style = {styles.textBut}>-</Text>
                 </TouchableOpacity>
             </View>
+
+            <View>
+                <TextInput
+                placeholder = 'nome'
+                palceholderTextColor={'#000'}
+                style = {styles.input}
+                value = {nome}
+                onChangeText = {setNome}
+                />
+
+                <TextInput
+                placeholder = 'email'
+                palceholderTextColor={'#000'}
+                style = {styles.input}
+                value = {email}
+                onChangeText = {setEmail}
+                />
+            </View>
+            <Text>Oi {nome}, seu email é {email}</Text>
         </View>
     )
 }
@@ -88,6 +111,12 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color:'white',
         fontSize:'30px',
+    },
+    input:{
+        borderWidth: 1,
+        borderRadius: '15px',
+        padding:10,
+        fontWeight: 'bold',
     }
 
 });

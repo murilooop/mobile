@@ -3,11 +3,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { createStackNavigator } from '@react-navigation/stack';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 import Home from './screens/Home';
 import Login from './screens/login';
 import Feed from './screens/Feed';
 import Contador from './screens/contador';
+import Product from './screens/Product';
 
 function BottomTabs(){
   const Bottom = createBottomTabNavigator();
@@ -45,6 +47,14 @@ function BottomTabs(){
           headerShown:false,
           tabBarIcon: () => (
             <MaterialIcons name="countertops" size={30} color={'black'} />
+          ),
+        }}  
+        />
+        <Bottom.Screen name='Product' component={Product}
+        options={{
+          headerShown:false,
+          tabBarIcon: () => (
+            <AntDesign name="shoppingcart" size={24} color="black" />
           ),
         }}  
         />
