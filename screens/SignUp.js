@@ -38,6 +38,7 @@ export default function SignUp({navigation}){
             placeholder="Senha"
             value={senha}
             onChangeText={setSenha}
+            secureTextEntry = {true}
             />
             <Button
             color={'gray'}

@@ -1,15 +1,32 @@
 import {View, Text, StyleSheet, FlatList, Image, ScrollView} from 'react-native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cell1 from '../images/iphone.png'
 import Card from '../screens/card'
+import {bank} from './controler';
+import { collection, doc, getDocs } from 'firebase/firestore';
 
 export default function Product(){
     const [produtos, setProdutos] = useState([
-        {id: 1, nome: 'Camiseta', valor: 99.99, image: Cell1},
-        {id:2, nome: 'Moletom', valor: 159.99, image: Cell1},
-        {id:3, nome: 'Tênis', valor:89.90, image: Cell1},
-        {id:4, nome: 'Calça', valor:250.90, image: Cell1}
     ])
+
+    useEffect(() => {
+
+        async function carregarProdutos() {
+            try{
+                const querySnapshot = await getDocs(collection(bank, 'produtos'));
+                const lista = [];
+                querySnapshot.forEach((doc) => {
+                    lista.push({id:doc.id, ...doc.data()});    
+                });
+                setProdutos(lista);
+
+            } 
+            catch(error){
+                console.log("Erro ao buscar produtos: ", error);
+            }
+        }
+        carregarProdutos();
+        }, []);
     return(
    
             <View style = {styles.container}>
@@ -25,7 +42,7 @@ export default function Product(){
                 data={produtos}
                 renderItem={({item}) => (
                     <Card
-                    imagem = {item.image}
+                    imagem = {item.imagem}
                     nome = {item.nome}
                     valor = {item.valor}
                     />

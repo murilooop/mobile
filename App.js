@@ -11,6 +11,7 @@ import Feed from './screens/Feed';
 import Contador from './screens/contador';
 import Product from './screens/Product';
 import Registro from './screens/SignUp';
+import addProduct from './screens/addProduct';
 
 function BottomTabs(){
   const Bottom = createBottomTabNavigator();
@@ -27,6 +28,14 @@ function BottomTabs(){
         headerTintColor:'black'
       }}  
       >
+        <Bottom.Screen name='Product' component={Product}
+        options={{
+          headerShown:false,
+          tabBarIcon: () => (
+            <AntDesign name="shoppingcart" size={24} color="black" />
+          ),
+        }}  
+        />
         <Bottom.Screen  name='Home' component={Home}
         options={{
           headerShown:false,
@@ -51,14 +60,15 @@ function BottomTabs(){
           ),
         }}  
         />
-        <Bottom.Screen name='Product' component={Product}
+        <Bottom.Screen name='addProduct' component={addProduct}
         options={{
           headerShown:false,
           tabBarIcon: () => (
-            <AntDesign name="shoppingcart" size={24} color="black" />
+            <MaterialIcons name="countertops" size={30} color={'black'} />
           ),
         }}  
         />
+      
       </Bottom.Navigator>
   )
 }

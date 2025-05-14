@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
+import {Text, View, StyleSheet, Image, TextInput, Button, TouchableOpacity} from 'react-native';
 import background4 from '../images/white background.jpg'
 import { ImageBackground } from 'react-native-web';
 import { useState } from "react"
@@ -37,10 +37,14 @@ export default function Login({navigation}){
                                 placeholder="Senha"
                                 value={senha}
                                 onChangeText={setSenha}
+                                secureTextEntry = {true}
                                 />
                 </View>
                 <Button title ="Entrar" onPress={VerificaUser} />
-                <Button title ="Cadastrar-se" onPress={() => navigation.navigate('Cadastro')}/>
+                {/* <Button title ="Cadastrar-se" onPress={() => navigation.navigate('Cadastro')}/> */}
+                <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+                    <Text style = {styles.loginLink}>CADASTRAR</Text>
+                </TouchableOpacity>
                 <View style = {styles.credits}>
                     <Text style={styles.textcredits}>Clique aqui para Suporte</Text>
                 </View>
@@ -79,6 +83,12 @@ const styles = StyleSheet.create({
         borderRadius: '15px',
         padding:10,
         fontWeight: 'bold',
+    },
+    loginLink:{
+        fontSize:15,
+        color: "#007BFF",
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
 
 
