@@ -1,6 +1,6 @@
-import { View, Image, ScrollView, Text, StyleSheet } from "react-native";
+import { View, Image, ScrollView, Text, StyleSheet, Button } from "react-native";
 
-export default function Card({imagem, nome, valor}){
+export default function Card({imagem, nome, valor, comprar}){
     return(
         <View style = {styles.card}>
             <Image style = {styles.image} source={imagem}/>
@@ -8,6 +8,12 @@ export default function Card({imagem, nome, valor}){
             <Text style = {styles.txtprod}>{nome}</Text>
             <Text style = {styles.txtprod}>R${valor}</Text>
             </View>
+            <Button
+            title="comprar"
+            onPress={comprar}
+            color={'#000000'}
+
+            />
         </View>
     )
 }

@@ -4,10 +4,11 @@ import Cell1 from '../images/iphone.png'
 import Card from '../screens/card'
 import {bank} from './controler';
 import { collection, doc, getDocs } from 'firebase/firestore';
+import { useCarrinho } from '../components/ProviderCart';
 
-export default function Product(){
-    const [produtos, setProdutos] = useState([
-    ])
+export default function Product({navigation}){
+    const [produtos, setProdutos] = useState([]);
+    const {adicionarProduto} = useCarrinho();
 
     useEffect(() => {
 
@@ -45,10 +46,12 @@ export default function Product(){
                     imagem = {item.imagem}
                     nome = {item.nome}
                     valor = {item.valor}
+                    comprar = {() => {
+                        adicionarProduto(item);
+                        navigation.navigate('carrinho');
+                    }}
                     />
-                )}
-                keyExtractor={item => item.id}
-                />
+                )}                />
             </View>
     )
 }
@@ -81,4 +84,4 @@ const styles = StyleSheet.create({
         width:'100px',
         height: '100px',
     } */
-})
+});

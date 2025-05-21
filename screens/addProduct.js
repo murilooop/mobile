@@ -24,7 +24,7 @@ export default function addProduct(){
         catch(error){
             console.log('erro no cadastro do produto', error)
         }
-    }
+    } 
 
     return(
         <View style = {styles.container}>

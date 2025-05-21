@@ -1,4 +1,4 @@
-import {View, TextInput, Button, StyleSheet, Text } from "react-native"
+import {View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from "react-native"
 import { useState } from "react"
 
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
@@ -45,11 +45,9 @@ export default function SignUp({navigation}){
             title="Cadastrar"
             onPress={cadastroUser}
             />
-            <Button
-            color={'gray'}
-            title="Login"
-            onPress={() => navigation.navigate('Login')}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <Text style = {styles.loginLink}>LOGIN</Text>
+            </TouchableOpacity>
         </View>
     )
 
@@ -73,5 +71,11 @@ const styles = StyleSheet.create({
         borderRadius: '15px',
         padding:10,
         fontWeight: 'bold',
+    },
+    loginLink:{
+        fontSize:15,
+        color: "#007BFF",
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
 })
