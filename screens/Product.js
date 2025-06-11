@@ -51,7 +51,7 @@ export default function Product({navigation}){
                         navigation.navigate('carrinho');
                     }}
                     />
-                )}                />
+                )}/>
             </View>
     )
 }
